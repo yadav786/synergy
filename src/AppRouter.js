@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, NavLink, Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import HOC from './HOC'
+import HOC from './components/HOC'
 import App from './App'
-import About from './About'
-import Profile from './Profile'
-import Contact from './Contact'
-import LogIn from './LogIn'
+import About from './components/About'
+import Profile from './components/Profile'
+import Contact from './components/Contact'
+import LogIn from './components/LogIn'
 
 const AppRouter = (props) => {
   console.log('AppRouter', props)

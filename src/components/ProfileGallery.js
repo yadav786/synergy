@@ -8,8 +8,8 @@ import {
   CarouselCaption
 } from 'reactstrap'
 import { connect } from 'react-redux'
-import { getData } from './actions/addArticleAction'
-import './App.css'
+import { getData } from '../actions/addArticleAction'
+import '../assets/css/App.css'
 
 const items = [
   {

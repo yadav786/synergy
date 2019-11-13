@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ProfileDropdown from './ProfileDropdown'
 import ProfileGallery from './ProfileGallery'
-import { getData, passProfileDropdown } from './actions/addArticleAction'
+import { getData, passProfileDropdown } from '../actions/addArticleAction'
 import PerformanceWiseFuntionalComponent from './PerformanceWiseFuntionalComponent'
 // eslint-disable-next-line react/prefer-stateless-function
 class Profile extends Component {

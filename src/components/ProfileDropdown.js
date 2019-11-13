@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
-import { getData } from './actions/addArticleAction'
-import './App.css'
+import { getData } from '../actions/addArticleAction'
+import '../assets/css/App.css'
 // eslint-disable-next-line react/prefer-stateless-function
 class ProfileDropdown extends Component {
 

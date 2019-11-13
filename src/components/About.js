@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { connect } from 'react-redux'
-import { getData } from './actions/addArticleAction'
+import { getData } from '../actions/addArticleAction'
 
 class About extends React.Component{
   constructor(props){

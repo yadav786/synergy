@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useReducer } from 'react'
 import { connect } from 'react-redux'
 // import { useQuery } from '@apollo/react-hooks';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
+import './assets/css/App.css'
 
 import { Card, CardBody, CardHeader, CardSubtitle, Spinner, Button } from 'reactstrap'
 // import { GET_USERS, VIEW_USERS, HELLO } from "./Queries";
