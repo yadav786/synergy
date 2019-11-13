@@ -9,11 +9,10 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk'; 
 //import { addArticleAction } from './actions/addArticleAction';
 import rootReducer from './reducers/rootReducer'; 
+import AppRouter from './AppRouter';  
 //import {addArticleAction} from './addArticleAction'; //getData
-import App from './App'; 
-import * as serviceWorker from './serviceWorker';  
- 
-//rxjs   
+import * as serviceWorker from './serviceWorker';   
+//rxjs     
 //data structure library immutable.js 
 //isomorphic React   
 //JSON Web Token
@@ -57,10 +56,12 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk
 
   //<ApolloProvider client={client}>
    //</ApolloProvider>
+  
+  console.log('store===',store); 
 
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <AppRouter />
     </Provider>
     , document.getElementById('root'));
 

@@ -45,7 +45,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react": "^7.16.0",
     "json-server": "^0.15.1"
   }
 }
