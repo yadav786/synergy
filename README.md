@@ -1,5 +1,5 @@
 
-## Create React App with Testing Tools (JEST and Enzyme) and GrpahQl Database and React Redux With Integration
+## Create React App with Testing Tools (JEST and Enzyme) and GrpahQl Database and With React Redux Integration
 - Airbnb Eslint Integration with Create React App 
 - Create project with Create React App
 - Just run this command "npm install --save-dev eslint-config-airbnb"
