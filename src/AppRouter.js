@@ -13,7 +13,7 @@ const AppRouter = (props) => {
   const { ...newProps } = props
   console.log('isUserLoggedIn', newProps.isUserLoggedIn)
   let isUserLoggedIn = newProps.isUserLoggedIn
-  isUserLoggedIn = true
+  // isUserLoggedIn = true
   return (
     <Router>
       <ul>
