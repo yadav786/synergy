@@ -12,12 +12,10 @@ export const passProfileDropdown = (passProfiledown) => {
 }
 
 export const getCards = () => {
-  console.log('ACTIONS GET_CARDS')
   return { type: GET_CARDS }
 }
 
 export const loggedIn = (userLogin) => {
-  console.log('userLogin', userLogin)
   let userLogged = false
   if (userLogin.username === 'pankaj123' && userLogin.password === 'yadav123'){
     userLogged = true
