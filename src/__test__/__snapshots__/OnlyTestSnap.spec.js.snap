@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Only Test Snap  1`] = `
+<div>
+  <p>
+    Items Found 
+    1
+  </p>
+  <p>
+    Items Found 
+    2
+  </p>
+  <p>
+    Items Found 
+    3
+  </p>
+  <p>
+    Items Found 
+    4
+  </p>
+</div>
+`;

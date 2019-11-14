@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, CardBody, CardTitle, Button, FormGroup, Form, Input, Label } from 'reactstrap'
 import { connect } from 'react-redux'
 import { addArticleAction, getData, loggedIn } from '../actions/addArticleAction'
-
+import { OnlyTestSnap } from './OnlyTestSnap'
 // eslint-disable-next-line react/prefer-stateless-function
 class LogIn extends Component {
 
@@ -71,6 +71,7 @@ class LogIn extends Component {
     return (
       <>
         <Card>
+          <OnlyTestSnap items = {[1]} />
           <CardBody>
             <CardTitle>Log In</CardTitle>
             <Form onSubmit={this.submitForm}>
