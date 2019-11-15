@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 export const OnlyTestSnap = (props) => {
   // console.log('props', props)
   const { items = [] } = props
@@ -25,4 +26,12 @@ export const OnlyTestSnap = (props) => {
     )
   }
 
+}
+
+OnlyTestSnap.defaultProps = {
+  items: [6]
+}
+
+OnlyTestSnap.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.number)
 }

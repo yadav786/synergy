@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../assets/css/App.css'
 
 import { Card, CardBody, CardHeader, CardSubtitle, Spinner, Button } from 'reactstrap'
-const App = () => {
+const Home = () => {
 
   const [initialize, onChangeState] = useState(0)
 
@@ -90,5 +90,5 @@ const mapStateToProps = (state) => {
   return state
 }
 
-export default connect(mapStateToProps, null)(App)
+export default connect(mapStateToProps, null)(Home)
 

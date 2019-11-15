@@ -9,7 +9,7 @@ import Profile from './components/Profile'
 import Contact from './components/Contact'
 import LogIn from './components/LogIn'
 
-const AppRouter = (props) => {
+const App = (props) => {
   const { ...newProps } = props
   let isUserLoggedIn = newProps.isUserLoggedIn
   return (
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => {
   return state
 }
 
-export default connect(mapStateToProps, null)(AppRouter)
+export default connect(mapStateToProps, null)(App)

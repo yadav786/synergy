@@ -36,7 +36,7 @@ class LogIn extends Component {
       errors.password = 'Please Enter Your Password'
     }
 
-    console.log('formError===', formError)
+    console.log('formErrors====\x1b[32m', JSON.stringify(errors) + '\x1b[0m')
 
     if (formError){
       this.setState({
@@ -67,7 +67,7 @@ class LogIn extends Component {
   render() {
 
     const { ...formErrors } = this.state
-    console.log(formErrors)
+    console.log('formErrors====\x1b[31m', JSON.stringify(formErrors) + '\x1b[0m')
     return (
       <>
         <Card>

@@ -179,7 +179,6 @@
     "no-underscore-dangle": 1, // disallow dangling underscores in identifiers
     "one-var": [1, "never"], // allow just one var statement per function (off by default)
     "operator-assignment": [1, "never"], // require assignment operator shorthand where possible or prohibit it entirely (off by default) 
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }], // specify whether double or single quotes should be used   
     "no-extra-semi": 2, // disallow unnecessary semicolons   
     "semi": [1, "never"], // require or disallow use of semicolons instead of ASI   
     "semi-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after semicolons
