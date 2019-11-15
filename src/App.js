@@ -12,6 +12,7 @@ import LogIn from './components/LogIn'
 const App = (props) => {
   const { ...newProps } = props
   let isUserLoggedIn = newProps.isUserLoggedIn
+  console.log('isUserLoggedIn App and Router ====', isUserLoggedIn)
   return (
     <Router>
       <Navigations/>

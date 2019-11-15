@@ -18,6 +18,10 @@ class LogIn extends Component {
 
   }
 
+  componentDidMount(){
+    console.log('I am here')
+  }
+
   validateForm(username, password){
     let formError = false
     let errors = {}
@@ -52,7 +56,7 @@ class LogIn extends Component {
     let password = this.passwordRef.current.value
     let isFormError = this.validateForm(username, password)
     if (isFormError){
-      alert('Something Went Wrong')
+      console.log('Something Went Wrong')
       return false
     }
 
@@ -67,7 +71,7 @@ class LogIn extends Component {
   render() {
 
     const { ...formErrors } = this.state
-    console.log('formErrors====\x1b[31m', JSON.stringify(formErrors) + '\x1b[0m')
+    // console.log('formErrors====\x1b[31m', JSON.stringify(formErrors) + '\x1b[0m')
     return (
       <>
         <Card>
