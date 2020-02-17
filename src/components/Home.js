@@ -31,9 +31,7 @@ const Home = () => {
       return { count: state.count - 1 }
     }
     return state
-
-
-  }
+  }  
 
   const [store, dispatch] = useReducer(reducer, initialState)
   // console.log(dispatch);
