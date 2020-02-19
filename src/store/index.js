@@ -1,6 +1,13 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import {
+    createStore,
+    applyMiddleware,
+    combineReducers
+} from 'redux'
+import {
+    composeWithDevTools
+} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
+import crudReducer from '../reducers/crudReducer'
 import rootReducer from '../reducers/rootReducer'
-
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+const allReducers = combineReducers({fakeLoginData:rootReducer, crudOpertion:crudReducer});    
+export const store = createStore(allReducers, composeWithDevTools(applyMiddleware(thunk)));   

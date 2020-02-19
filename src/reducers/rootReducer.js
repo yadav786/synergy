@@ -11,23 +11,23 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   if (action.type === ADD_ARTICLE){
-    return Object.assign({}, state, { articles: state.articles.concat(action.payload) })
-  }
+    return {...state }
+  } 
   if (action.type === 'DATA_LOADED'){
-    return Object.assign({}, state, { remoteArticles: state.remoteArticles.concat(action.payload) })
-  }
-  if (action.type === USER_LOGIN){
-    return Object.assign({}, state, { isUserLoggedIn: action.userLogged })
-  }
+    return {...state}
+  }   
+  if (action.type === USER_LOGIN){ 
+    console.log('state', state); 
+    return { ...state, isUserLoggedIn:  action.userLogged};
+  }    
   if (action.type === PASS_DROPDOWN){
-    return Object.assign({}, state, { passProfiledown: action.passProfiledown })
-  }
-  if (action.type === GET_CARDS){
-  	console.log('GET_CARDS')
-    return state
+    return {...state, passProfiledown: action.passProfiledown }
+  }  
+  if (action.type === GET_CARDS){    
+    return state 
   }
   return state
-
+ 
 }
 
 export default rootReducer

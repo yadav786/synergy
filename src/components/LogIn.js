@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 import { Card, CardBody, CardTitle, Button, FormGroup, Form, Input, Label } from 'reactstrap'
-import { connect } from 'react-redux'
+import { connect, useStore } from 'react-redux'
 import { addArticleAction, getData, loggedIn } from '../actions/addArticleAction'
 import { OnlyTestSnap } from './OnlyTestSnap'
 // eslint-disable-next-line react/prefer-stateless-function
-class LogIn extends Component {
-
+class LogIn extends React.PureComponent {
+  
   constructor(props){
     super(props)
     this.submitForm = this.submitForm.bind(this)
     this.validateForm = this.validateForm.bind(this)
     this.usernameRef = React.createRef()
-    this.passwordRef = React.createRef()
-    this.state = {
-      errors: { username: '', password: '' }
-    }
+    this.passwordRef = React.createRef() 
+  } 
 
-  }
 
-  componentDidMount(){
-    console.log('I am here')
-  }
+  componentWillReceiveProps(nextProps){
+      console.log('componentWillReceiveProps nextProps===',nextProps);
+       if(nextProps.isUserLoggedIn){  
+              this.props.history.push('/home')
+       } 
+  }  
 
   validateForm(username, password){
     let formError = false
@@ -39,14 +39,7 @@ class LogIn extends Component {
       formError = true
       errors.password = 'Please Enter Your Password'
     }
-
-    console.log('formErrors====\x1b[32m', JSON.stringify(errors) + '\x1b[0m')
-
-    if (formError){
-      this.setState({
-        errors: errors
-      })
-    }
+  
     return formError
   }
 
@@ -60,18 +53,15 @@ class LogIn extends Component {
       return false
     }
 
-    const { ...props } = this.props
-    props.loggedIn({ username: username, password: password })
-    const { ...isUserLoggedIn } = this.props
-    if (isUserLoggedIn){
-      props.history.push('/home')
-    }
-  }
+  
+    this.props.loggedIn({ username: username, password: password })
+    const { ...isUserLoggedIn } = this.props 
+    console.log(' home this props', this.props); 
+  
+  }  
 
   render() {
-
-    const { ...formErrors } = this.state
-    // console.log('formErrors====\x1b[31m', JSON.stringify(formErrors) + '\x1b[0m')
+  
     return (
       <>
         <Card>
@@ -83,16 +73,13 @@ class LogIn extends Component {
                 <Label for='Username'>Username</Label>
                 <span style={{ color: 'red' }}>
                   {' '}
-                  {formErrors.errors.username}
-                  {' '}
+              
                 </span>
                 <Input innerRef={this.usernameRef} type='text' placeholder='Please Enter Your Username' />
-              </FormGroup>
+              </FormGroup> 
               <FormGroup>
                 <Label for='Password'>Password</Label>
                 <span style={{ color: 'red' }}>
-                  {' '}
-                  {formErrors.errors.password}
                   {' '}
                 </span>
                 <Input innerRef={this.passwordRef} type='password' placeholder='Please Enter Your Password'/>
@@ -106,10 +93,10 @@ class LogIn extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return state
-}
-
+const mapStateToProps = (state) => {  
+  return {isUserLoggedIn: state.fakeLoginData.isUserLoggedIn};
+}        
+ 
 const mapDispatchToProps = (dispatch) => {
   return {
     addArticleAction: (article) => {
@@ -123,5 +110,5 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-
+ 
 export default connect(mapStateToProps, mapDispatchToProps)(LogIn)

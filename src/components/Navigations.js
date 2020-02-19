@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 const Navigations = (props) => {
   const { ...newProps } = props
-  let isUserLoggedIn = newProps.isUserLoggedIn
+  let isUserLoggedIn = newProps.fakeLoginData.isUserLoggedIn
   console.log('Navigations isUserLoggedIn', isUserLoggedIn)
-  return (<ul>
+  return (<ul>    
     { (!isUserLoggedIn) ?
       (
         <li><NavLink to='/'>Log In</NavLink></li>
