@@ -17,12 +17,11 @@ const rootReducer = (state = initialState, action) => {
     return {...state}
   }   
   if (action.type === USER_LOGIN){ 
-    console.log('state', state); 
     return { ...state, isUserLoggedIn:  action.userLogged};
   }    
   if (action.type === PASS_DROPDOWN){
     return {...state, passProfiledown: action.passProfiledown }
-  }  
+  }   
   if (action.type === GET_CARDS){    
     return state 
   }

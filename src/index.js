@@ -8,7 +8,8 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import {
   store
-} from './store/'
+} from './store/' 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 // console.log('store===', store)
 
 /* 

@@ -12,12 +12,13 @@ import HOC from './components/HOC'
 import Navigations from './components/Navigations'
 import Home from './components/Home'
 import About from './components/About'
-import Profile from './components/Profile'
+import Profile from './components/Profile'  
 import Contact from './components/Contact'
 import LogIn from './components/LogIn'
-
-const App = (props) => {
-  const {
+import { Users } from './components/crudComponents/'; 
+    
+const App = (props) => {  
+  const { 
     ...newProps
   } = props
   let isUserLoggedIn = newProps.fakeLoginData.isUserLoggedIn;
@@ -54,7 +55,13 @@ const App = (props) => {
         component = {
           HOC(Contact)
         }
-        /> </>
+        />
+        <Route exact path = '/users'
+        component ={ 
+          HOC(Users)
+        }      
+        />
+        </>
       )
     } <Redirect to = '/' />    </Switch > < /Router >
   )

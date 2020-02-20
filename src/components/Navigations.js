@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 const Navigations = (props) => {
@@ -17,7 +17,8 @@ const Navigations = (props) => {
           <li><NavLink to='/about'>About</NavLink></li>
           <li><NavLink to='/profile'>Profile</NavLink></li>
           <li><NavLink to='/contact'>Contact Us</NavLink></li>
-        </ >
+          <li><NavLink to='/users'>User</NavLink></li>
+        </ >   
       )
     }
   </ul>)

@@ -40,9 +40,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getData: () => {
+    getData: () => { 
       dispatch(getData())
-    },
+    }, 
     passProfileDropdown: (data) => {
       dispatch(passProfileDropdown(data))
     }

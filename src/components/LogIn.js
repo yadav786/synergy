@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Card, CardBody, CardTitle, Button, FormGroup, Form, Input, Label } from 'reactstrap'
-import { connect, useStore } from 'react-redux'
+import { connect } from 'react-redux' 
 import { addArticleAction, getData, loggedIn } from '../actions/addArticleAction'
-import { OnlyTestSnap } from './OnlyTestSnap'
+import { OnlyTestSnap } from './OnlyTestSnap' 
 // eslint-disable-next-line react/prefer-stateless-function
 class LogIn extends React.PureComponent {
   
@@ -17,7 +17,7 @@ class LogIn extends React.PureComponent {
 
   componentWillReceiveProps(nextProps){
       console.log('componentWillReceiveProps nextProps===',nextProps);
-       if(nextProps.isUserLoggedIn){  
+       if(nextProps.isUserLoggedIn){   
               this.props.history.push('/home')
        } 
   }  
@@ -92,7 +92,7 @@ class LogIn extends React.PureComponent {
     )
   }
 }
-
+ 
 const mapStateToProps = (state) => {  
   return {isUserLoggedIn: state.fakeLoginData.isUserLoggedIn};
 }        
