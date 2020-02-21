@@ -15,37 +15,36 @@ app.use((req, res, next) => {
 })  
      
 app.route('/users').   
- get((req, res) => {    
-   // only for aunthentication
-   if(req.query.id){      
-          const isUserEdited = allUsers.filter(value => value.id === req.query.id)    
+ get((req, res) => {     
+   if(req.query.id!==''){      
+          const isUserEdited = allUsers.filter(value => value.id == req.query.id)    
           res.status(200).json({errorCode:false, data:isUserEdited});
-   }  
-   else if(req.body.authentication){  
+   }     
+   // only for aunthentication
+   else if(req.query.authentication){          
           const isUserAutheticated = allUsers.filter(value => value.username === req.body.username && value.password === req.body.password)    
           res.status(200).json({errorCode:false, data:isUserAutheticated});
    }
-   else{   
+   else{     
         res.status(200).json({ errorCode:false, data:allUsers });  
-        }
+       }
  }).    
  patch((req, res) => {     
 
-  const getUpdatedData = session;   
-  session = getUpdatedData.map(value  => (value.id === req.body.id) ? 
-    {
+  session = allUsers.map(value  => (value.id == req.query.id) ? 
+    {             
       ...value,
-      username:req.body.username,
-      password:req.body.password,
-    }   
-    : value);
-    allUsers = session;
-  res.status(200).send({errorCode:false, errorMessage:'Data Updated Successfully'});   
- }). 
- post((req, res)=>{  
- console.log('allUsers',allUsers);     
+      username:req.query.username,
+      age:req.query.age,
+      address:req.query.address,
+    }            
+    : value);   
+    allUsers = session;  
+  res.status(200).send({errorCode:false, data:allUsers,errorMessage:'Data Updated Successfully'});   
+ }).      
+ post((req, res)=> {      
   if(req.query.username && req.query.age && req.query.address){ 
-    allUsers.push({username:req.query.username, age:req.query.age, id:Math.floor(Math.random() * 10), address:req.query.address});
+    allUsers.push({username:req.query.username, age:req.query.age, id:Math.floor(Math.random() * 10 + 1), address:req.query.address});
     session = allUsers;     
   }        
   res.status(200).send({errorCode:false, data:session, errorMessage:'Data Inserted Successfully'});  

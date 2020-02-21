@@ -9,7 +9,7 @@ class About extends React.Component{
     this.toggle = this.toggle.bind(this)
     this.state = {
       modal: true
-    }
+    } 
     const { ...dataProps } = this.props
     dataProps.getData()
     // console.log(this);

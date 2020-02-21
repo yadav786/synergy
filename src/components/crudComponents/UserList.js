@@ -3,16 +3,17 @@ import { connect } from "react-redux"
 import { Table, Button, Form, Accordion, Card, striped, bordered, hover, responsive } from 'react-bootstrap'
 import { deleteUser} from '../../actions/addArticleAction'
 import PopUpConfirmation from '../common/PopUpConfirmation'
-   
-const UserList = (props) => {  
+import { editUserData} from '../../actions/addArticleAction'
+
+const UserList = (props) => {      
     const [show, setShow] = useState(false);
     const [userId, setuserId] = useState(false);
-    console.log('props userlist', props);  
-    const editUser = (userId) => {  
-        // console.log('props editUser userlist', userId); 
-    }
+    
+    const editUser = (userId) => {
+        props.editUserData({id:userId});
+    }  
     const deleteUsers =(userId) => {
-	    setShow(true) 
+	    setShow(true)  
 	    setuserId(userId)
     }
     const deleteThisUser = () => { 
@@ -68,10 +69,15 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch) => {
       return { 
-		   	    deleteUser: (userData) => {  
+		   	    deleteUser: (userData) => {   
 		      		dispatch(deleteUser(userData))
+		    },
+		        editUserData: (userData) => {       
+		      		dispatch(editUserData(userData))
 		    }  
   }
 }
-  
+
+
+
 export default connect(mapStateToProps, mapDispatchToProps)(UserList); 

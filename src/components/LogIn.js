@@ -13,10 +13,8 @@ class LogIn extends React.PureComponent {
     this.usernameRef = React.createRef()
     this.passwordRef = React.createRef() 
   } 
-
-
-  componentWillReceiveProps(nextProps){
-      console.log('componentWillReceiveProps nextProps===',nextProps);
+  
+  componentWillReceiveProps(nextProps){ 
        if(nextProps.isUserLoggedIn){   
               this.props.history.push('/home')
        } 
@@ -49,7 +47,7 @@ class LogIn extends React.PureComponent {
     let password = this.passwordRef.current.value
     let isFormError = this.validateForm(username, password)
     if (isFormError){
-      console.log('Something Went Wrong')
+      alert('Something Went Wrong') 
       return false
     }
 

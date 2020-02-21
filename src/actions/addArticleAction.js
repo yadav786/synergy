@@ -4,7 +4,7 @@ const ADD_ARTICLE = 'ADD_ARTICLE'
 const USER_LOGIN = 'USER_LOGIN'
 const PASS_DROPDOWN = 'PASS_DROPDOWN'
 const GET_CARDS = 'GET_CARDS'
-
+ 
 const GET_USERS = 'GET_USERS'
 const ADD_USER = 'ADD_USER'
 const EDIT_USERDATA = 'EDIT_USERDATA'
@@ -36,7 +36,7 @@ export const loggedIn = (userLogin) => {
                  userLogged = true;
                  dispatch({ type: USER_LOGIN, userLogged })
              }     
-         })
+         }) 
     }  
   // return { type: USER_LOGIN, userLogged }
 }
@@ -75,14 +75,28 @@ export const addUser  = (userData) => {
 export const addUser  = (userData) => { 
    return(dispatch) => {  
     axios({
-      method: "post",
+      method: "post", 
       url: API.BASE_URL+''+API.USERS,
       params: userData 
     }).then(res =>  {
           dispatch({ type: GET_USERS, payload: res.data.data })   
      })
   } 
-}  
+} 
+
+export const updateUser  = (userData) => { 
+   return(dispatch) => {  
+    axios({  
+      method: "patch", 
+      url: API.BASE_URL+''+API.USERS,
+      params: userData 
+    }).then(res =>  {                  
+          dispatch({ type: GET_USERS, payload: res.data.data })   
+          dispatch({ type: EDIT_USERDATA, payload: [] }) 
+     })  
+  }    
+}   
+
 
 export const editUserData = (userData) => {
     return(dispatch) => {   
@@ -90,7 +104,7 @@ export const editUserData = (userData) => {
           method: "get",
           url: API.BASE_URL+''+API.USERS,
           params: userData  
-        }).then(res =>  {   
+        }).then(res =>  {    
               dispatch({ type: EDIT_USERDATA, payload: res.data.data })   
          })
       } 

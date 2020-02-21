@@ -10,8 +10,8 @@ const crudReducer = (state = initialState, action) => {
         return {...state, users: action.payload}
     }    
     if (action.type === EDIT_USERDATA) {    
-        return {...state, users: action.payload}
-    }     
+        return {...state, editUser: action.payload}
+    }        
     return state
 } 
 
