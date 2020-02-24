@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   height: 100%;
@@ -9,7 +10,91 @@ html, body {
   margin-top: 20px;
 }
 
-.profile{
-    width:50%;
-	float:left;	
-} 
+.profile {
+  width: 50%;
+  float: left;
+}
+
+.menu-navigation {
+  /* display: "inline-flex"; */
+  list-style-type: none;
+  padding: 10px;
+}
+
+.menu-navigation li {
+  /* list-style-type: none; */
+  padding: 10px;
+}
+.btn-universe {
+  margin: 20px 0px;
+}
+
+#top-nav {
+  display: flex;
+  margin: 10px auto;
+}
+
+.logo li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.user-profile li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.login {
+  display: flex;
+}
+
+/*
+Custom Columns to make responsive web
+*/
+
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-3 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+.custom-column-1 {
+  width: 33.33333%;
+}
+
+.popup-position {
+  z-index: 1;
+  position: absolute;
+  margin: 6% 20%;
+  width: 43%;
+}
+
+user-settings {
+}

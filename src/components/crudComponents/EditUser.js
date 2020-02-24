@@ -22,7 +22,7 @@ const EditUser = props => {
     <>
       <Accordion>
         <Card>
-          <Card.Header>Edit User</Card.Header>
+          <Card.Header className="text-center">Edit User</Card.Header>
           <Form>
             <Form.Group controlId="addUserForm.EmailId">
               <Form.Label>Username</Form.Label>
@@ -67,18 +67,20 @@ const EditUser = props => {
                 }
               />
             </Form.Group>
-            <Button
-              variant="primary"
-              onClick={() =>
-                updateUser(
-                  props.editUser && props.editUser.length > 0
-                    ? props.editUser[0].id
-                    : ""
-                )
-              }
-            >
-              Submit
-            </Button>
+            <div className="text-center btn-universe">
+              <Button
+                variant="primary"
+                onClick={() =>
+                  updateUser(
+                    props.editUser && props.editUser.length > 0
+                      ? props.editUser[0].id
+                      : ""
+                  )
+                }
+              >
+                Submit
+              </Button>
+            </div>
           </Form>
         </Card>
       </Accordion>
