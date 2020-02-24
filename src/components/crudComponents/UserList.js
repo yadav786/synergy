@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import {
-  Table,
-  Button,
-  Form,
-  Accordion,
-  Card,
-  striped,
-  bordered,
-  hover,
-  responsive
-} from "react-bootstrap";
+import { Table, Button, Accordion, Card } from "react-bootstrap";
 import { deleteUser } from "../../actions/addArticleAction";
 import PopUpConfirmation from "../common/PopUpConfirmation";
 import { editUserData } from "../../actions/addArticleAction";

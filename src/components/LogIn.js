@@ -10,14 +10,8 @@ import {
   Label
 } from "reactstrap";
 import { connect } from "react-redux";
-import {
-  addArticleAction,
-  getData,
-  loggedIn
-} from "../actions/addArticleAction";
-// import { OnlyTestSnap } from "./OnlyTestSnap";
-// eslint-disable-next-line react/prefer-stateless-function
-class LogIn extends React.PureComponent {
+import { loggedIn } from "../actions/addArticleAction";
+class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
@@ -26,7 +20,7 @@ class LogIn extends React.PureComponent {
     this.passwordRef = React.createRef();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     if (nextProps.isUserLoggedIn) {
       this.props.history.push("/home");
     }
@@ -57,12 +51,8 @@ class LogIn extends React.PureComponent {
     event.preventDefault();
     let username = this.usernameRef.current.value;
     let password = this.passwordRef.current.value;
-    let isFormError = this.validateForm(username, password);
-    if (isFormError) {
-      alert("Something Went Wrong");
-      return false;
-    }
     this.props.loggedIn({ username: username, password: password });
+    return true;
   }
 
   render() {
@@ -111,12 +101,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addArticleAction: article => {
-      dispatch(addArticleAction(article));
-    },
-    getData: () => {
-      dispatch(getData());
-    },
     loggedIn: userData => {
       dispatch(loggedIn(userData));
     }
