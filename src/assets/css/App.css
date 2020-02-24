@@ -96,5 +96,19 @@ Custom Columns to make responsive web
   width: 43%;
 }
 
-user-settings {
+.user-profile li:hover .user-settings {
+  position: absolute;
+  display: block;
+  left: 54.5em;
+  z-index: 1;
+  top: 52px;
+}
+
+.user-settings {
+  display: none;
+}
+
+.user-settings li {
+  background: cadetblue;
+  border-radius: 12px;
 }
