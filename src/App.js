@@ -14,11 +14,12 @@ import Profile from "./components/Profile";
 import Contact from "./components/Contact";
 import LogIn from "./components/LogIn";
 import { Users } from "./components/crudComponents/";
-
+import MyMap from "./components/maps/MyMap";
+ 
 const App = () => {
   return (
     <Router>
-      <Navigations />
+      <Navigations /> 
       <Switch>
         <Route exact path="/" component={LogIn} />
         <Route exact path="/Home" component={HOC(Home)} />{" "}
@@ -26,9 +27,10 @@ const App = () => {
         <Route exact path="/profile" component={HOC(Profile)} />{" "}
         <Route exact path="/contact" component={HOC(Contact)} />
         <Route exact path="/users" component={HOC(Users)} />
+        <Route exact path="/maps" component={HOC(MyMap)} />
         <Redirect to="/" />{" "}
       </Switch>{" "}
-    </Router>
+    </Router>    
   );
 };
 

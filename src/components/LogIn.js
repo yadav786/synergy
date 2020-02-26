@@ -15,17 +15,17 @@ class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
-    this.validateForm = this.validateForm.bind(this);
+    // this.validateForm = this.validateForm.bind(this);
     this.usernameRef = React.createRef();
     this.passwordRef = React.createRef();
   }
 
-  componentDidUpdate(nextProps) {
+  componentWillUpdate(nextProps) {
     if (nextProps.isUserLoggedIn) {
       this.props.history.push("/home");
     }
   }
-
+  /* 
   validateForm(username, password) {
     let formError = false;
     let errors = {};
@@ -46,7 +46,7 @@ class LogIn extends React.Component {
 
     return formError;
   }
-
+*/
   submitForm(event) {
     event.preventDefault();
     let username = this.usernameRef.current.value;

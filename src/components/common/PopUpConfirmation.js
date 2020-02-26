@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 
 const PopUpConfirmation = ({ show, deleteThisUser, closeModal }) => {
   // console.log('props show', show);
-  return show ? (
+  return show ? ( 
     <Modal.Dialog>
       <Modal.Header>
         <Modal.Title>Delete User?</Modal.Title>

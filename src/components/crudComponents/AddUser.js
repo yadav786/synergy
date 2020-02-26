@@ -16,42 +16,36 @@ const AddUser = props => {
   };
 
   return (
-    <>
-      <Accordion>
-        <Card>
-          <Card.Header className="text-center">Add User</Card.Header>
-          <Form>
-            <Form.Group controlId="addUserForm.EmailId">
-              <Form.Label>Username </Form.Label>
-              <Form.Control
-                type="text"
-                ref={username}
-                placeholder="pankaj123"
-              />
-            </Form.Group>
-            <Form.Group controlId="addUserForm.Age">
-              <Form.Label>Age </Form.Label>
-              <Form.Control as="select" ref={age}>
-                <option>18</option>
-                <option>25</option>
-                <option>30</option>
-                <option>35</option>
-                <option>40</option>
-              </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="addUserForm.Address">
-              <Form.Label>Address</Form.Label>
-              <Form.Control as="textarea" rows="3" ref={address} />
-            </Form.Group>
-            <div className="text-center btn-universe">
-              <Button variant="primary" onClick={() => submitForm()}>
-                Submit
-              </Button>
-            </div>
-          </Form>
-        </Card>
-      </Accordion>
-    </>
+    <Accordion>
+      <Card>
+        <Card.Header className="text-center">Add User</Card.Header>
+        <Form>
+          <Form.Group controlId="addUserForm.EmailId">
+            <Form.Label>Username </Form.Label>
+            <Form.Control type="text" ref={username} placeholder="pankaj123" />
+          </Form.Group>
+          <Form.Group controlId="addUserForm.Age">
+            <Form.Label>Age </Form.Label>
+            <Form.Control as="select" ref={age}>
+              <option>18</option>
+              <option>25</option>
+              <option>30</option>
+              <option>35</option>
+              <option>40</option>
+            </Form.Control>
+          </Form.Group>
+          <Form.Group controlId="addUserForm.Address">
+            <Form.Label>Address</Form.Label>
+            <Form.Control as="textarea" rows="3" ref={address} />
+          </Form.Group>
+          <div className="text-center btn-universe">
+            <Button variant="primary" onClick={() => submitForm()}>
+              Submit
+            </Button>
+          </div>
+        </Form>
+      </Card>
+    </Accordion>
   );
 };
 

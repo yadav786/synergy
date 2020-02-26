@@ -33,6 +33,9 @@ const Navigations = () => {
           <li className="menu-navigation">
             <NavLink to="/users">User</NavLink>
           </li>
+          <li className="menu-navigation">
+            <NavLink to="/maps">Maps</NavLink> 
+          </li>  
         </ul>
       </div>
       <div className="custom-column-3">
