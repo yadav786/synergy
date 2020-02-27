@@ -1,22 +1,26 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-
-const MarkerPopUp = ({ show, closeMarker, confirm }) => {
-  // console.log('props show', show);
+import CommuterDetail from '../maps/CommuterDetail'    
+import DriverDetail from '../maps/DriverDetail'    
+ 
+const MarkerPopUp = ({ show, closeMarker, confirm, whichUser, driverDetail ='', commuterDetail="" }) => {
+  // console.log('props show', show); 
   return show ? (  
     <Modal.Dialog>
       <Modal.Header> 
-        <Modal.Title>Delete User?</Modal.Title>
-      </Modal.Header>
+        <Modal.Title>Book Driver?</Modal.Title>
+      </Modal.Header> 
       <Modal.Body>
-        <p>Are you sure want to delete?</p>
-      </Modal.Body>
+        { whichUser === true ? 
+          <DriverDetail/> :
+        <CommuterDetail/>}  
+      </Modal.Body>  
       <Modal.Footer>
         <Button variant="secondary" onClick={closeMarker}>
-          Close
-        </Button>
+          Cancel
+        </Button> 
         <Button variant="primary" onClick={confirm}>
-          Delete
+          Confirm 
         </Button>
       </Modal.Footer>
     </Modal.Dialog>

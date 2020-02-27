@@ -96,6 +96,13 @@ Custom Columns to make responsive web
   width: 43%;
 }
 
+.map-popup-position{
+  z-index: 1;
+  position: absolute;
+  margin: 6% 20%;
+  width: 100%;
+} 
+
 .user-profile li:hover .user-settings {
   position: absolute;
   display: block;

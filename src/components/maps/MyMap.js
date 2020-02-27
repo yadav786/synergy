@@ -50,7 +50,9 @@ constructor(props){
             console.log('Directions result === ', result);
                 
              const markerArray = []; 
-             const myDriverRoute =  result.routes[0].legs[result.routes[0].legs.length-1].steps
+             const routes = result.routes[0].legs[result.routes[0].legs.length-1];
+             const myDriverRoute =  routes.steps; 
+             console.log('result ====', result); 
              // temp0.routes[0].legs[0].steps
               // const myRoute = directionResult.routes[0].legs[0];         
               // myDriverRoute.length
@@ -60,7 +62,10 @@ constructor(props){
                       position:
                       {
                         lat:  myDriverRoute[i].start_point.lat(),
-                        lng:  myDriverRoute[i].start_point.lng()
+                        lng:  myDriverRoute[i].start_point.lng(),
+                        getDriverRouteData:{
+                          ...routes
+                        }    
                       }     
                     }
                   );    
@@ -148,8 +153,14 @@ render() {
  return(
       <Container>
       <Row> 
-      <Col xs ={6}> 
-      { this.state.show ? <MarkerPopUp show = {this.state.show} closeMarker={this.closeMarker} confirm={this.confirm} /> : null }
+      <Col xs ={6}>  
+      { this.state.show ? 
+        <div className="map-popup-position">
+        <MarkerPopUp show = {this.state.show} closeMarker={this.closeMarker} confirm={this.confirm} 
+        whichUser={true} driverDetail="" commuterDetail=""/> 
+        </div>        
+         : null    
+      }
       <Card> 
         <Card.Header className="text-center">Get Direction and Search Driver</Card.Header>
         <Form>    
